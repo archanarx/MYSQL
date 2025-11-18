@@ -5,12 +5,12 @@ INSERT INTO books (bookId, title, author, price, stock) VALUES
 
 -- Increase the price of the book 'Learn SQL' by 50 and update its stock to 12.
 UPDATE booksnew 
-SET price = 450, stock = 12
+SET price = price + 50, stock = 12
 WHERE bookId = 1;
 
 -- Decrease the stock by 2 for books where the price is greater than 500.
 UPDATE booksnew
-SET stock = 3
+SET stock = stock - 2
 WHERE bookId = 2 ;
 
 -- Delete the book that has book_id = 3.
