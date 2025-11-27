@@ -1,9 +1,12 @@
+CREATE DATABASE EmployeesDB;
+USE EmployeesDB;
+
 -- TABLE - EMPLOYEE
 CREATE TABLE Employee (
     id INT PRIMARY KEY,
     Name VARCHAR (50) ,
     Department VARCHAR (50),
-    Leave INT 
+    Leave_count INT 
  );
 
 -- TABLE - EXAM
@@ -15,7 +18,7 @@ CREATE TABLE Exam (
 );
 
 -- EMPLOYEE DATA
- INSERT INTO employee (id, Name, Department, Leave )
+ INSERT INTO employee (id, Name, Department, Leave_count )
  VALUES (1, 'Raju', 'Sales', 1),
         (2, 'Sangeetha', 'Sales', 3),
         (3, 'Vinay', 'Operations', 8),
@@ -43,7 +46,7 @@ VALUES  (1, 2, 'Pass'),
 -- 1. Query to get the list of employees who took more than 5 leaves and are in sales department.
 SELECT name
 FROM Employee
-WHERE leave > 5 AND Department = 'Sales' ;
+WHERE leave_count > 5 AND Department = 'Sales' ;
 
 -- 2. Query to get the number of employees working in operations department.
 SELECT COUNT(*) AS Total_employees_in_operations
@@ -59,7 +62,7 @@ GROUP BY Department;
 SELECT Department
 FROM Employee
 GROUP BY Department
-HAVING SUM(Leave) > 10 ;
+HAVING SUM(Leave_count) > 10 ;
 
 -- 5. Query to list all the employees names who have passed the exam.
 SELECT Employee.Name
